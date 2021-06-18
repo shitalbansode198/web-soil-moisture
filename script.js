@@ -1539,5 +1539,5 @@ setInterval(async () => {
   const response = await fetch('https://api-soil-moisture.herokuapp.com/get');
   value = await response.json();
   console.log(value.data);
-  update(value)
+  update(value.data)
 }, 1000);
