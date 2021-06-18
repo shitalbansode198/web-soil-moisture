@@ -1534,14 +1534,9 @@ function update(value) {
   tank.updateHeight(value);
 }
 
-setInterval(() => {
+setInterval(async () => {
   var value;
-  fetch('https://api-soil-moisture.herokuapp.com/get')
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  });
+  const response = await fetch('https://api-soil-moisture.herokuapp.com/get');
+  value = await response.json();
   update(value)
-}, 1000);
+}, 1000 * 10);
