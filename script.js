@@ -1534,6 +1534,7 @@ function update(value) {
   tank.updateHeight(value);
 }
 
+tank.removeArrow()
 setInterval(async () => {
   var value;
   const response = await fetch('https://api-soil-moisture.herokuapp.com/get');
