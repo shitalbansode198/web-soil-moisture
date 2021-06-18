@@ -1538,6 +1538,6 @@ setInterval(async () => {
   var value;
   const response = await fetch('https://api-soil-moisture.herokuapp.com/get');
   value = await response.json();
-  console.log(value['data']);
+  console.log(value.data);
   update(value)
-}, 1000 * 10);
+}, 1000);
