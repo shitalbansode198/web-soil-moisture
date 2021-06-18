@@ -1536,7 +1536,11 @@ function update(value) {
 
 setInterval(async () => {
   var value;
-  const response = await window.fetch('https://api-soil-moisture.herokuapp.com/get');
+  new Req
+  const response = await window.fetch('https://api-soil-moisture.herokuapp.com/get',{
+    method: "GET",
+    mode: "no-cors"
+  });
   value = await response.json();
   update(value)
 }, 1000 * 10);
